@@ -118,9 +118,8 @@ const App: React.FC = () => {
           </motion.div>
         </div>
       </section>
-
       {/* Services Section */}
-      <section className="py-20 bg-gray-950">
+<section className="py-20 bg-gray-950">
   <div className="container mx-auto px-4">
     <motion.div
       initial={{ opacity: 0 }}
@@ -138,11 +137,11 @@ const App: React.FC = () => {
       </p>
     </motion.div>
 
-    {/* Enhanced Card Stack Container */}
-    <div className="relative h-[600px] md:h-[700px] w-full max-w-4xl mx-auto">
+    {/* Responsive Card Stack Container */}
+    <div className="relative min-h-[500px] md:min-h-[600px] lg:min-h-[700px] w-full max-w-4xl mx-auto">
       {/* Stack Shadow Effect - Creates depth illusion */}
       <motion.div 
-        className="absolute top-8 left-4 right-4 h-[600px] md:h-[700px] bg-gray-800 rounded-xl shadow-2xl"
+        className="absolute top-8 left-4 right-4 h-full bg-gray-800 rounded-xl shadow-2xl"
         initial={{ opacity: 0, y: 60 }}
         animate={{ 
           opacity: activeCard === 'barber' ? 0.3 : 0.2,
@@ -151,7 +150,7 @@ const App: React.FC = () => {
         transition={{ duration: 0.4 }}
       />
       <motion.div 
-        className="absolute top-4 left-2 right-2 h-[600px] md:h-[700px] bg-gray-800 rounded-xl shadow-xl"
+        className="absolute top-4 left-2 right-2 h-full bg-gray-800 rounded-xl shadow-xl"
         initial={{ opacity: 0, y: 30 }}
         animate={{ 
           opacity: activeCard === 'barber' ? 0.2 : 0.1,
@@ -162,7 +161,7 @@ const App: React.FC = () => {
 
       {/* Barber Services Card */}
       <motion.div 
-        className="absolute top-0 left-0 right-0 bg-gray-900 rounded-xl p-8 shadow-2xl border border-gray-700 hover:border-blue-400 transition-all duration-300 h-full w-full"
+        className="absolute top-0 left-0 right-0 bg-gray-900 rounded-xl p-6 md:p-8 shadow-2xl border border-gray-700 hover:border-blue-400 transition-all duration-300 min-h-[500px] md:min-h-[600px] lg:min-h-[700px] w-full overflow-y-auto"
         initial={{ scale: 0.95, y: 20, opacity: 0.9 }}
         animate={{ 
           scale: activeCard === 'barber' ? 1 : 0.95,
@@ -176,19 +175,19 @@ const App: React.FC = () => {
         transition={{ duration: 0.3 }}
       >
         <div className="flex items-center mb-6">
-          <div className="bg-blue-400 w-12 h-12 rounded-full flex items-center justify-center mr-4 shadow-md">
-            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="bg-blue-400 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mr-4 shadow-md">
+            <svg className="w-5 h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 9a2 2 0 10-4 0v5a2 2 0 01-2 2h6m-6-4h4m8 0a9 9 0 11-18 0 9 9 0 0118 0z" />
             </svg>
           </div>
-          <h3 className="text-2xl font-bold text-white font-serif">Barber Services</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-white font-serif">Barber Services</h3>
         </div>
         <BarberServices />
       </motion.div>
 
       {/* Salon Services Card */}
       <motion.div 
-        className="absolute top-0 left-0 right-0 bg-gray-900 rounded-xl p-8 shadow-2xl border border-gray-700 hover:border-red-400 transition-all duration-300 h-full w-full"
+        className="absolute top-0 left-0 right-0 bg-gray-900 rounded-xl p-6 md:p-8 shadow-2xl border border-gray-700 hover:border-red-400 transition-all duration-300 min-h-[500px] md:min-h-[600px] lg:min-h-[700px] w-full overflow-y-auto"
         initial={{ scale: 0.9, y: 40, opacity: 0.7 }}
         animate={{ 
           scale: activeCard === 'salon' ? 1 : 0.9,
@@ -202,12 +201,12 @@ const App: React.FC = () => {
         transition={{ duration: 0.3 }}
       >
         <div className="flex items-center mb-6">
-          <div className="bg-red-400 w-12 h-12 rounded-full flex items-center justify-center mr-4 shadow-md">
-            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <div className="bg-red-400 w-10 h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center mr-4 shadow-md">
+            <svg className="w-5 h-5 md:w-6 md:h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
             </svg>
           </div>
-          <h3 className="text-2xl font-bold text-white font-serif">Salon Services</h3>
+          <h3 className="text-xl md:text-2xl font-bold text-white font-serif">Salon Services</h3>
         </div>
         <SalonServices darkBackground={true} />
       </motion.div>
@@ -216,19 +215,19 @@ const App: React.FC = () => {
       <div className="absolute -bottom-16 left-1/2 transform -translate-x-1/2 flex gap-4">
         <button 
           onClick={() => setActiveCard('barber')}
-          className={`${activeCard === 'barber' ? 'bg-blue-700 scale-110 shadow-lg' : 'bg-blue-600 shadow-md'} hover:bg-blue-700 text-white uppercase font-bold py-2 px-4 rounded-full transition-all duration-300 flex items-center `}
+          className={`${activeCard === 'barber' ? 'bg-blue-700 scale-110 shadow-lg' : 'bg-blue-600 shadow-md'} hover:bg-blue-700 text-white uppercase font-bold py-2 px-4 rounded-full transition-all duration-300 flex items-center text-sm md:text-base`}
         >
-          <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 md:w-5 md:h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
           </svg>
           Barber
         </button>
         <button 
           onClick={() => setActiveCard('salon')}
-          className={`${activeCard === 'salon' ? 'bg-red-700 scale-110 shadow-lg' : 'bg-red-600 shadow-md'} hover:bg-red-700 text-white uppercase font-bold py-2 px-4 rounded-full transition-all duration-300 flex items-center`}
+          className={`${activeCard === 'salon' ? 'bg-red-700 scale-110 shadow-lg' : 'bg-red-600 shadow-md'} hover:bg-red-700 text-white uppercase font-bold py-2 px-4 rounded-full transition-all duration-300 flex items-center text-sm md:text-base`}
         >
           Salon
-          <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-4 h-4 md:w-5 md:h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         </button>
@@ -243,36 +242,38 @@ const App: React.FC = () => {
       viewport={{ once: true }}
       className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8"
     >
-            <div className="bg-gray-800 p-4 sm:p-6 rounded-lg border border-gray-700 hover:border-blue-400 transition-all duration-300">
-              <div className="text-blue-400 mb-3 sm:mb-4">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
-                </svg>
-              </div>
-              <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2 font-serif">Quick Service</h4>
-              <p className="text-gray-300 text-sm sm:text-base">Efficient grooming without compromising quality</p>
-            </div>
-            <div className="bg-gray-800 p-4 sm:p-6 rounded-lg border border-gray-700 hover:border-blue-400 transition-all duration-300">
-              <div className="text-blue-400 mb-3 sm:mb-4">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
-                </svg>
-              </div>
-              <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2 font-serif">Premium Products</h4>
-              <p className="text-gray-300 text-sm sm:text-base">Only the finest grooming products used</p>
-            </div>
-            <div className="bg-gray-800 p-4 sm:p-6 rounded-lg border border-gray-700 hover:border-red-400 transition-all duration-300">
-              <div className="text-red-400 mb-3 sm:mb-4">
-                <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-                </svg>
-              </div>
-              <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2 font-serif">Membership</h4>
-              <p className="text-gray-300 text-sm sm:text-base">Exclusive benefits for regular clients</p>
-            </div>
-          </motion.div>
+      <div className="bg-gray-800 p-4 sm:p-6 rounded-lg border border-gray-700 hover:border-blue-400 transition-all duration-300">
+        <div className="text-blue-400 mb-3 sm:mb-4">
+          <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+          </svg>
         </div>
-      </section>
+        <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2 font-serif">Quick Service</h4>
+        <p className="text-gray-300 text-sm sm:text-base">Efficient grooming without compromising quality</p>
+      </div>
+      <div className="bg-gray-800 p-4 sm:p-6 rounded-lg border border-gray-700 hover:border-blue-400 transition-all duration-300">
+        <div className="text-blue-400 mb-3 sm:mb-4">
+          <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
+          </svg>
+        </div>
+        <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2 font-serif">Premium Products</h4>
+        <p className="text-gray-300 text-sm sm:text-base">Only the finest grooming products used</p>
+      </div>
+      <div className="bg-gray-800 p-4 sm:p-6 rounded-lg border border-gray-700 hover:border-red-400 transition-all duration-300">
+        <div className="text-red-400 mb-3 sm:mb-4">
+          <svg className="w-8 h-8 sm:w-10 sm:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+          </svg>
+        </div>
+        <h4 className="text-lg sm:text-xl font-bold text-white mb-1 sm:mb-2 font-serif">Membership</h4>
+        <p className="text-gray-300 text-sm sm:text-base">Exclusive benefits for regular clients</p>
+      </div>
+    </motion.div>
+  </div>
+</section>
+
+      
 
       {/* CTA Section */}
       <section className="py-16 sm:py-20 bg-gradient-to-r from-blue-600 to-red-600 text-white relative overflow-hidden">
