@@ -219,7 +219,7 @@ const App: React.FC = () => {
       viewport={{ once: true }}
       className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8"
     >
-      {/* ... (keep your existing service highlights code) ... */}
+      
     </motion.div>
   </div>
 </section>

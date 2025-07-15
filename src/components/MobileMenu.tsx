@@ -100,7 +100,7 @@ const MobileMenu = ({ mobileMenuActive, setMobileMenuActive }: MobileMenuProps) 
         <motion.div variants={itemVariants} className="mt-8">
           <Link 
             onClick={() => setMobileMenuActive(false)} 
-            to='/book'
+            to='/reservations'
             className="text-2xl font-bold bg-amber-400 text-black px-8 py-3 rounded-full hover:bg-amber-500 transition-colors duration-300"
           >
             Book Now
